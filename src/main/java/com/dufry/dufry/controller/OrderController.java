@@ -31,8 +31,14 @@ public class OrderController {
         return orderDetailService.updateOrderStatus(id,status);
     }
 
-    @GetMapping("/GetCompletedOrders")
+    @GetMapping("/egtCompletedOrders")
     public List<OrderDetail> getCompletedOrders() {
         return orderDetailService.getCompletedOrders();
+    }
+
+    @GetMapping("/getOrderStatus")
+
+    public String getOrderStatus(@PathVariable Long id) {
+        return orderDetailService.getOrderStatus(id);
     }
 }
